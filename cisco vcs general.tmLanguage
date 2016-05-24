@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleUUID</key>
+	<string>B7BC3FFD-6E4B-11D9-91AF-000D93589AF6</string>
+	<key>fileTypes</key>
+	<array>
+		<string>cisco</string>
+	</array>
+	<key>firstLineMatch</key>
+	<string>^start log</string>
+	<key>foldingStartMarker</key>
+	<string></string>
+	<key>foldingStopMarker</key>
+	<string></string>
+	<key>name</key>
+	<string>cisco vcs general</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>match</key>
+			<string>\b(Via|Call-ID|CSeq|From|To|Max-Forwards|User-Agent|Expires|Event|P-Asserted-Identity|Content-Type|Content-Length|X-TAATag|Content-Transfer-Encoding|Supported|Server|Allow|Contact|Route|Accept|Record-Route|Subscription-State|ms-keep-alive|Ms-Conversation-ID|ms-application-via|ms-subnet|ms-endpoint-location-data|ms-user-data|Content-ID|Content-Disposition|SIP-If-Match|Session-Expires|SIP-ETag|Accept-Language|Date|Allow-Events|Timestamp|Require|Remote-Party-ID|Min-SE|Cisco-Guid):</string>
+			<key>name</key>
+			<string>headers.sip.vcs.cisco</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(a|v|o|s|c|b|t|m)=.+\n</string>
+			<key>name</key>
+			<string>sdp.sip.vcs.cisco</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>Src-ip="</string>
+			<key>end</key>
+			<string>"</string>
+			<key>name</key>
+			<string>sourceip.vcs.cisco</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>Src-port="</string>
+			<key>end</key>
+			<string>"</string>
+			<key>name</key>
+			<string>sourceport.vcs.cisco</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>Dst-ip="</string>
+			<key>end</key>
+			<string>"</string>
+			<key>name</key>
+			<string>dstip.vcs.cisco</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>SIPMSG:</string>
+			<key>end</key>
+			<string>SIP/2.0</string>
+			<key>name</key>
+			<string>method.sip.vcs.cisco</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>Warning:.+ "</string>
+			<key>end</key>
+			<string>"</string>
+			<key>name</key>
+			<string>warning.sip.vcs.cisco</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>&lt;\?xml</string>
+			<key>end</key>
+			<string>presence&gt;|&lt;/media_control&gt;</string>
+			<key>name</key>
+			<string>presence.xml.sip.vcs.cisco</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>egress-zone=</string>
+			<key>end</key>
+			<string>;</string>
+			<key>name</key>
+			<string>egresszone.sip.vcs.cisco</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>ingress-zone=</string>
+			<key>end</key>
+			<string>$</string>
+			<key>name</key>
+			<string>ingresszone.sip.vcs.cisco</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>Level=\"WARNING\"</string>
+			<key>name</key>
+			<string>warning.event.vcs.cisco</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>&lt;batchSub xmlns="http://schemas.microsoft.com/2006/01/sip/batch-subscribe"</string>
+			<key>end</key>
+			<string>&lt;/batchSub&gt;</string>
+			<key>name</key>
+			<string>presence.msft.xml.sip.vcs.cisco</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>^\w{3} \d\d \d\d:\d\d:\d\d</string>
+			<key>name</key>
+			<string>date.vcs.cisco</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>UTCTime="</string>
+			<key>end</key>
+			<string>"</string>
+			<key>name</key>
+			<string>time.vcs.cisco</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>Detail="Sending Request \w*\b=\w*\b</string>
+			<key>name</key>
+			<string>sending.request.sip.vcs.cisco</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>Detail="Receive Request \w*\b=\w*\b</string>
+			<key>name</key>
+			<string>receive.request.sip.vcs.cisco</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>Detail="Sending Response \w*\b=\w*\b</string>
+			<key>name</key>
+			<string>sending.response.sip.vcs.cisco</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>Detail="Receive Response \w*\b=\w*\b</string>
+			<key>name</key>
+			<string>receive.response.sip.vcs.cisco</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>Detail="Sending H.</string>
+			<key>end</key>
+			<string>"</string>
+			<key>name</key>
+			<string>sending.h323.vcs.cisco</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>Detail="Received H.</string>
+			<key>end</key>
+			<string>"</string>
+			<key>name</key>
+			<string>received.h323.vcs.cisco</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>Event="Alarm Raised"</string>
+			<key>name</key>
+			<string>alarmraised.event.sip.vcs.cisco</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>text.cisco</string>
+	<key>uuid</key>
+	<string>1A854D41-D86A-4E1D-AA00-26522FE6D8C0</string>
+</dict>
+</plist>
